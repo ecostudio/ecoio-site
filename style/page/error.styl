@@ -1,0 +1,34 @@
+.error-page {
+	cf()
+	padding 4em 0
+	text-align center
+
+	h1 {
+		font-size 2em
+		column(0.5)
+
+		.error-code {
+			font-size 4em
+			background-color ecogreen
+			color white
+			display block
+		}
+
+		+mobile() {
+			stack()
+		}
+	}
+
+	.error-details {
+		column(0.5)
+		font-size 1.5em
+		padding 0 0 9.5em
+
+		background url(../image/kotasz.png) no-repeat bottom center
+		background-size auto 65%
+
+		+mobile() {
+			stack()
+		}
+	}
+}

@@ -1,0 +1,215 @@
+image-container(halign = left, valign = top, width = 100%) {
+	if halign != none {
+		text-align halign
+	}
+	line-height 1
+
+	img {
+		width width
+		display inline-block
+		line-height 1
+		if valign != none {
+			vertical-align valign
+		}
+	}
+
+	&:before {
+		if valign != none {
+			content ''
+			vertical-align valign
+		}
+		display inline-block
+		height 100%
+	}
+}
+
+cover(top = 0, left = 0, right = 0, bottom = 0) {
+	position absolute
+	top top
+	left left
+	right right
+	bottom bottom
+}
+
+size(w, h) {
+	width w
+	height h
+}
+
+square(size) {
+	width size
+	height size
+}
+
+abs-vcenter() {
+	position absolute
+	top 50%
+	transform translateY(-50%)
+}
+
+abs-hcenter() {
+	position absolute
+	left 50%
+	transform translateX(-50%)
+	.ie8 & {
+		margin-left -(@width / 2)%
+	}
+}
+
+oneline-center(height) {
+	height height
+	line-height height
+}
+
+reset-button() {
+	background none
+	border 0
+	padding 0
+}
+
+unstyled-list() {
+	list-style none
+	margin 0
+
+	> li {
+		margin 0
+		padding 0
+
+		&:before {
+			content none
+			margin 0
+			padding 0
+			position static
+		}
+	}
+}
+
+//CONTENT
+
+wide-content() {
+	margin 0 page_margin_small
+
+	.ie8 & {
+		margin 0 2%
+	}
+}
+
+narrow-content() {
+	margin 0 page_margin_big
+
+	.ie8 & {
+		margin 0 13%
+	}
+
+	+below(4) {
+		margin 0
+
+		.ie8 & {
+			margin 0
+		}
+	}
+}
+
+full-from-wide() {
+	margin 0 (- page_margin_small)
+
+	.ie8 & {
+		margin 0 -2%
+	}
+}
+
+full-from-narrow() {
+	margin 0 (- (page_margin_big + page_margin_small))
+
+	+below(4) {
+		margin 0 (- page_margin_small)
+	}
+}
+
+decorinfo-panel() {
+	position relative
+	overflow hidden
+	white-space nowrap
+
+	+mobile() {
+		overflow-x auto
+	}
+
+	.decor, .info {
+		width 100%
+
+		position relative
+		top 0
+
+		transition: left animtime_decorinfo_panel animdelay_decorinfo_panel ease
+	}
+
+	.decor {
+		display inline-block
+		vertical-align top
+
+		left 0
+	}
+
+	.info {
+		position absolute
+		left 100%
+		bottom 0
+		overflow-y auto
+		white-space normal
+
+		ul, li {
+			margin 0
+		}
+
+		li {
+			margin-bottom 0.5em
+		}
+	}
+
+	.decor-item {
+		position absolute
+		left 0
+		top 0
+		transition  top animtime_decorinfo_panel animdelay_decorinfo_panel ease,
+					left animtime_decorinfo_panel animdelay_decorinfo_panel ease,
+					transform animtime_decorinfo_panel animdelay_decorinfo_panel ease
+	}
+
+	&:hover,
+	.ie8 & {
+
+		.decor {
+			left -100%
+		}
+
+		.info {
+			left 0
+		}
+
+		.decor-item {
+			left -100%
+		}
+
+		+mobile() {
+			.decor, .info, .decor-item {
+				left auto
+			}
+		}
+	}
+}
+
+full-shadow() {
+	position relative
+
+	&:before {
+		full-from-narrow()
+		content ''
+		box-shadow inset contrast_shadow
+		position absolute
+		top 0
+		left 0
+		right 0
+		height 2px
+	}
+}

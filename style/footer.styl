@@ -1,0 +1,95 @@
+.bottom-bar {
+	text-align center
+	font-header()
+
+	nav {
+		background-color footer_menu_bgcolor
+		color footer_menu_color
+		padding (golden(5, false))vw 0 (golden(4, false))vw
+		overflow hidden
+
+		.ie8 & {
+			padding 4%
+		}
+
+		ul {
+			unstyled-list()
+		}
+
+		+mobile() {
+			font-size 1.2em
+		}
+
+		a {
+			display inline-block
+			padding (golden(6))vw 0
+
+			color inherit
+			font-size 0.75em
+			line-height 1.25
+			font-weight normal
+
+			+mobile() {
+				line-height 1.5
+			}
+		}
+
+		.level1 {
+			display inline-block
+			width (golden(1, false) - 50)vw
+			vertical-align top
+
+			.ie8 & {
+				width 20%
+			}
+
+			+tablet() {
+				column(1/4)
+			}
+
+			+mobile() {
+				column(1/2, 0, 2)
+				margin 1em 0
+			}
+
+			> a {
+				line-height (golden(4, false))vw
+				font-size 1em
+				display block
+				padding 0
+				margin (golden(5, false))vw 0
+
+				+mobile() {
+					line-height 2
+				}
+
+				&:after {
+					content ''
+					display block
+					border-bottom 1px solid footer_menu_color
+					width 33%
+					margin 0 auto
+				}
+			}
+		}
+	}
+}
+
+footer {
+	color footer_copy_color
+	line-height (golden(4))vw
+	font-size 0.75em
+
+	.ie8 & {
+		line-height 50px
+	}
+
+	+below(4) {
+		line-height 2
+	}
+
+	p {
+		margin 0
+		line-height inherit
+	}
+}

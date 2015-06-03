@@ -1,0 +1,16 @@
+golden_ratio = 0.38177083
+
+golden(count = 1, lower = true, start = 100) {
+	processed = start * golden_ratio
+	if count > 1 {
+		return golden(count - 1, lower, processed)
+	}
+	else {
+		if (lower) {
+			return processed
+		}
+		else {
+			return start - processed
+		}
+	}
+}

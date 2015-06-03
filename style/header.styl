@@ -1,0 +1,313 @@
+.top-bar {
+	height top_bar_height
+
+	background-color white
+	color header_text_color
+	font-size 1.25em
+	font-header()
+
+	position fixed
+	top 0
+	left 0
+	right 0
+	z-index z_topbar
+
+	box-shadow contrast_shadow
+
+	.ie8 & {
+		border-bottom 1px solid #ddd
+		height 3em
+	}
+
+	+tablet() {
+		font-size 1em
+		height top_bar_height * tablet_multiplier
+	}
+
+	+mobile() {
+		height auto
+	}
+
+	header {
+		wide-content()
+		cf()
+		position relative
+	}
+
+	ul {
+		unstyled-list()
+
+		li {
+			display inline-block
+			margin-right header_elem_spacing
+
+			.ie8 & {
+				margin-right 2em
+			}
+
+			+tablet() {
+				margin-right (header_elem_spacing / tablet_multiplier)
+
+				.ie8 & {
+					margin-right 1em
+				}
+			}
+		}
+	}
+
+	a {
+		box-sizing border-box
+		oneline-center(top_bar_height)
+		text-decoration none
+		font-weight normal
+		color inherit
+
+		.ie8 & {
+			oneline-center(3em)
+		}
+
+		+tablet() {
+			oneline-center(top_bar_height * tablet_multiplier)
+		}
+
+		+mobile() {
+			float left
+			height auto
+			line-height 1
+		}
+	}
+
+	.logo {
+		float left
+		width page_margin_big
+		margin 0 header_elem_spacing 0 0
+		font-size 1em
+
+		.ie8 & {
+			height 1.5em
+			padding 0.75em 0
+
+			img {
+				height 100%
+			}
+		}
+
+		+mobile() {
+			float none
+			width auto
+			text-align center
+		}
+
+		a {
+			image-container(left, middle, page_margin_big)
+			vertical-align top
+
+			.ie8 & {
+				display block
+				height 100%
+			}
+
+			.ie8 &:before {
+				content none
+			}
+
+			+mobile() {
+				image-container(width: auto)
+				float none
+				display inline-block
+				padding (1 - golden_ratio)em 0
+
+				&:before {
+					content none
+				}
+
+				img {
+					display block
+					height 1.4em
+				}
+			}
+		}
+	}
+
+	.header-nav {
+		float left
+
+		.ie8 & {
+			margin-left 0.5em
+
+			+tablet() {
+				margin-left -3em
+			}
+		}
+
+		a {
+			padding 0 (golden(5))vw
+			background-color transparent
+			transition background-color 0.6s ease
+		}
+
+		.active a,
+		a:hover,
+		a:focus {
+			background-color header_nav_active_bg
+			outline 0
+
+			.ie8 & {
+				background-color transparent
+				text-decoration underline
+			}
+		}
+	}
+
+	.social {
+
+		li {
+			margin-right header_social_spacing
+
+			.ie8 & {
+				margin-right 0.5em
+			}
+
+			+mobile() {
+				float left
+				margin 0 0 0 header_social_spacing_mobile
+
+				&:first-child {
+					margin 0
+				}
+			}
+		}
+
+		a {
+			color ecogreen
+			font-size header_social_size
+
+			@extend .fa
+			line-height top_bar_height
+
+			transition transform 0.2s ease
+
+			.ie8 & {
+				oneline-center(2em)
+			}
+
+			+tablet() {
+				line-height top_bar_height * tablet_multiplier
+
+				.ie8 & {
+					oneline-center(1em)
+				}
+			}
+
+			+mobile() {
+				line-height normal
+				font-size header_social_size_mobile
+			}
+		}
+
+		.facebook {
+			@extend .fa-facebook-square
+		}
+
+		.google {
+			@extend .fa-google-plus-square
+		}
+
+		.twitter {
+			@extend .fa-twitter-square
+		}
+
+		.github {
+			@extend .fa-github-square
+		}
+
+		.linkedin {
+			@extend .fa-linkedin-square
+		}
+	}
+
+	.header-menu {
+
+		.social {
+			float right
+		}
+
+		+mobile() {
+			left -100%
+
+			position absolute
+			top 100%
+			width ((1 - golden_ratio) * 100)%
+			z-index z_topmenu_drawer
+			transition left 0.2s ease-in
+
+			background-color #fff
+			border 1px solid #bbb
+
+			&.open {
+				left (- page_margin_small)
+			}
+
+			.header-nav {
+				float none
+				margin 3.5em 0 page_margin_small
+
+				li {
+					display block
+					margin 0
+				}
+
+				a {
+					display block
+					float none
+					font-size 1.25em
+					line-height 2
+					padding 0 page_margin_small
+				}
+			}
+
+			.social {
+				float left
+				position absolute
+				top page_margin_small
+				left page_margin_small
+			}
+		}
+	}
+
+	.header-menu-mobile {
+		display none
+
+		+mobile() {
+			display block
+
+			.social {
+				abs-vcenter()
+				float none
+				right 0
+			}
+		}
+
+	}
+
+	.menu-toggle {
+		reset-button()
+		abs-vcenter()
+		left 0
+
+		@extend .top-bar .social a
+		@extend .fa-bars
+
+		border-radius 3px
+		padding 1px 4px 1px 3px
+		outline 0
+
+		font-size 1.35em
+
+		&.open {
+			background-color ecogreen
+			color #fff
+		}
+	}
+
+}

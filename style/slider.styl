@@ -1,0 +1,51 @@
+.slider {
+	position relative
+	overflow hidden
+
+	.slide {
+		position relative
+		overflow hidden
+	}
+
+	.slick-list {
+		z-index 1 //for IE8, but won't work with .ie8 somehow
+	}
+
+	.prev, .next {
+		background none
+		border none
+		outline none
+		padding 0
+
+		width hero_icon_size
+		abs-vcenter()
+		z-index 2
+
+		@extend .fa
+		font-size 4em
+
+		.ie8 & {
+			top 40%
+		}
+
+		+below(4) {
+			top (hero_icon_size / 2)
+			transform none
+		}
+
+		+mobile() {
+			width auto
+			font-size 2em
+		}
+	}
+
+	.prev {
+		@extend .fa-angle-left
+		left 0
+	}
+
+	.next {
+		@extend .fa-angle-right
+		right 0
+	}
+}

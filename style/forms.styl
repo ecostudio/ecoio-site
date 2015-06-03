@@ -1,0 +1,123 @@
+label {
+	display block
+	position relative
+	overflow hidden
+
+	error-under() {
+		margin form_arrow_size 0 0
+		float left
+		left 0
+		top -2.6em
+
+		transition top 0.5s ease-out, opacity 0.5s ease-out, max-height 0.2s ease-out
+
+		&:before {
+			left form_arrow_size
+			top -(form_arrow_size)
+			transform none
+			margin 1px 0 0
+
+			border-width 0 form_arrow_size form_arrow_size form_arrow_size
+			border-color transparent transparent form_error_color transparent
+		}
+	}
+
+	.error {
+		display inline-block
+		opacity 0
+		position relative
+		left -50%
+		z-index -1
+		padding 0.1em 0.6em
+		margin-left (form_arrow_size * 2)
+
+		background-color form_error_color
+		color white
+
+		transition left 0.5s ease-out, opacity 0.5s ease-out
+
+		&:before {
+			content ''
+
+			square(0)
+			abs-vcenter()
+			left -(form_arrow_size)
+			margin 0 0 0 1px
+
+			border-style solid
+			border-width form_arrow_size form_arrow_size form_arrow_size 0
+			border-color transparent form_error_color transparent transparent
+		}
+
+		+mobile() {
+			error-under()
+			margin 0
+			max-height 0
+		}
+	}
+
+	textarea + .error {
+		error-under()
+	}
+
+	&.has-error .error {
+		opacity 1
+		left 0
+		top 0
+
+		+mobile() {
+			margin-top (form_arrow_size * 1.5)
+			max-height 5em
+		}
+	}
+}
+
+input, textarea {
+	box-sizing border-box
+	border 1px solid body_text_color
+	padding 0.3em 0.5em
+	color darken(body_text_color, 20%)
+}
+
+textarea {
+	width 100%
+	resize vertical
+	margin-top 2em
+}
+
+input {
+	width ((1 - golden_ratio) * 100)%
+	margin-top 1em
+
+	+mobile() {
+		width 100%
+	}
+}
+
+button {
+	font-text()
+	font-size 1em
+	line-height 2
+
+	background-color ecogreen
+	color white
+	border 1px solid darken(ecogreen, 5%)
+	padding 0 2em
+
+	form & {
+		margin 2em 0 0
+	}
+}
+
+button.action {
+	float right
+}
+
+button.cancel {
+	float left
+}
+
+.honeypot {
+	position absolute
+	left -1000em
+}

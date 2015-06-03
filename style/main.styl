@@ -1,0 +1,192 @@
+body {
+	background-color white
+	color body_text_color
+
+	font-size base_vw_font_size
+	font-text()
+
+	+tablet() {
+		font-size base_vw_font_size * tablet_multiplier
+	}
+
+	+mobile() {
+		font-size base_vw_font_size * 3
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height 2
+	font-header-light()
+	font-weight normal
+	margin 0
+}
+
+h1, h2, h3, h4 {
+	text-align center
+	color ecogreen
+}
+
+h1 {
+	font-size 3em
+	letter-spacing 0.025em
+
+	+mobile() {
+		font-size 2.5em
+	}
+}
+
+h2 {
+	font-size 2em
+}
+
+h3 {
+	font-size 1.75em
+}
+
+h4 {
+	font-size 1.5em
+}
+
+h5 {
+	font-size 1.25em
+}
+
+h6 {
+	font-size 1em
+	font-header()
+}
+
+p {
+	font-size 1em
+	line-height 1.5
+	margin 0 0 1em
+}
+
+ul, ol, dl {
+	list-style none
+	margin 0
+	padding 0
+	margin-bottom 1em
+}
+
+li {
+	margin-left 1em
+	line-height 1.5
+	position relative
+	padding-left 2em
+
+	&:before {
+		position absolute
+		top 0
+		left 0
+		line-height inherit
+		padding-right 1em
+		color ecogreen
+	}
+}
+
+ul {
+	li {
+		@extend .fa-circle
+
+		&:before {
+			@extend .fa
+			line-height inherit
+			font-size 0.9em
+		}
+	}
+}
+
+ol {
+	counter-reset ol-counter
+
+	li {
+		&:before {
+			content counter(ol-counter) "."
+			counter-increment ol-counter
+		}
+	}
+}
+
+dl {
+	cf()
+	line-height 1.5
+}
+
+dt {
+	color ecogreen
+	float left
+	clear left
+	margin-right 1em
+
+	&:after {
+		content ':'
+	}
+}
+
+dd {
+	float left
+	margin 0
+}
+
+a {
+	display inline-block
+	color ecogreen
+	text-decoration none
+
+	&:hover,
+	&:focus {
+		text-decoration underline
+		outline none
+	}
+}
+
+.full-image {
+	width 100%
+	margin 1em 0
+}
+
+.call-to-action {
+	text-align center
+	margin 2em 0
+}
+
+.page {
+	overflow hidden
+	padding-top top_bar_height
+
+	.ie8 & {
+		padding-top 50px
+	}
+
+	+tablet() {
+		padding-top top_bar_height * tablet_multiplier
+	}
+
+	+mobile() {
+		padding-top (1.25 * (1.4 + 2 * (1 - golden_ratio)))em
+	}
+
+}
+
+.content-container {
+	wide-content()
+	full-shadow()
+}
+
+.text-content {
+	narrow-content()
+
+	a {
+		text-decoration underline
+	}
+}
+
+.services-page,
+.jobs-page {
+
+	> h1 {
+		position absolute
+		left -9999em
+	}
+}

@@ -1,0 +1,171 @@
+.hero {
+	max-height 34.6875vw
+
+	color #eee
+
+	font-header()
+
+	.ie8 & {
+		display none
+	}
+
+	h1, p {
+		margin 0
+		text-align left
+		color inherit
+	}
+
+	.slide {
+		&:after {
+			content ''
+			-webkit-backface-visibility: hidden;
+
+			cover()
+			z-index z_herocover
+
+			background-color hero_overlay_color
+			opacity 0.69
+
+			transition opacity hero_fade_time ease-out, z-index 0s linear
+		}
+
+		&.playing {
+
+			&:after {
+				opacity 0
+				z-index z_herocover_hide
+				transition opacity hero_fade_time ease-out, z-index 0s linear hero_fade_time
+				pointer-events none
+			}
+
+			.hero-text {
+				opacity 0
+				z-index z_herocover_hide
+				transition opacity hero_fade_time ease-out, z-index 0s linear hero_fade_time
+				pointer-events none
+			}
+		}
+	}
+
+	.media {
+		position relative
+		z-index z_heromedia
+		width 100%
+		vertical-align top
+	}
+}
+
+.hero-text {
+	position absolute
+	top hero_text_top
+	z-index z_herotext
+	abs-hcenter()
+
+	width (golden(2, false))vw
+
+	transition opacity hero_fade_time ease-out, z-index 0s linear
+	-webkit-backface-visibility: hidden;
+
+	+tablet() {
+		width auto
+		top (hero_text_top / tablet_multiplier)
+	}
+
+	+mobile() {
+		abs-vcenter()
+		width 55%
+		left hero_icon_size + page_margin_small
+	}
+
+	h1 {
+		background-repeat no-repeat
+		background-size 23.5752% //in percentage to help IE9
+		padding-left hero_icon_size
+		height hero_icon_size
+		font-size 3em
+		line-height 0.8
+
+		+tablet() {
+			height hero_icon_size * tablet_multiplier
+			background-size @height
+			padding-left @height
+		}
+
+		+mobile() {
+			font-size 2.5em
+			padding-left 1.5em
+			background-size 1.5em
+			height 1.5em
+		}
+
+		.hero-title {
+			display block
+			height hero_title_height
+
+			+tablet() {
+				height hero_title_height * tablet_multiplier
+			}
+
+			+mobile() {
+				height auto
+				padding-bottom 0.2em
+			}
+		}
+
+		.hero-tagline {
+			display block
+			font-size 0.4444em
+		}
+	}
+
+	.text {
+		font-size 0.75em
+		height hero_title_height
+		overflow hidden
+
+		+tablet() {
+			height hero_title_height * tablet_multiplier
+		}
+
+		+mobile() {
+			height auto
+		}
+	}
+}
+
+.hero-play {
+	square(hero_icon_size)
+	@extend .fa
+	display block
+	margin 0 auto
+	padding 0
+
+	outline 0
+	border 2px solid #fff
+	border-radius 50%
+	font-size 1.8em
+
+	background-color transparent
+
+	transition background-color 0.3s ease;
+
+	&:before {
+		display inline-block
+		padding-left 7%
+	}
+
+	&:hover,
+	&:focus {
+		background-color rgba(255, 255, 255, 0.3)
+	}
+
+	+tablet() {
+		square(hero_icon_size * tablet_multiplier)
+	}
+
+	+mobile() {
+		square(16vw)
+		abs-vcenter()
+		right -50%
+	}
+}

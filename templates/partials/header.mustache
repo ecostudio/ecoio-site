@@ -1,0 +1,31 @@
+<header>
+	<h1 class="logo">
+		<a href="/"><img src="image/logo.png" alt="EcoStudio" /></a>
+	</h1>
+
+	<div class="header-menu">
+		<nav class="header-nav">
+			<ul>
+				{{#routes.jobs}}
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Karrier</a>
+				{{/routes.jobs}}
+
+				{{#routes.contact}}
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kapcsolat</a>
+				{{/routes.contact}}
+			</ul>
+		</nav>
+
+		<ul class="social">
+			<li><a class="facebook" target="_blank" title="Facebook" href="#"></a></li>
+			<li><a class="google" target="_blank" title="Google+" href="#"></a></li>
+			<li><a class="github" target="_blank" title="GitHub" href="#"></a></li>
+			<li><a class="twitter" target="_blank" title="Twitter" href="#"></a></li>
+			<li><a class="linkedin" target="_blank" title="LinkedIn" href="#"></a></li>
+		</ul>
+	</div>
+
+	<div class="header-menu-mobile">
+		<button class="menu-toggle"></button>
+	</div>
+</header>

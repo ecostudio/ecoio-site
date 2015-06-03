@@ -1,0 +1,14 @@
+{
+    "name": "ecostudio/ecostudio-site",
+    "require": {
+        "klein/klein": "~2.1",
+        "mustache/mustache": "~2.8",
+        "swiftmailer/swiftmailer": "~5.4"
+    },
+    "authors": [
+        {
+            "name": "Nagy Richard",
+            "email": "nr@ecostudio.hu"
+        }
+    ]
+}

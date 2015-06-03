@@ -1,0 +1,24 @@
+.DS_Store
+Thumbs.db
+tmp
+.ftppass
+dist/**
+
+#Composer
+/vendor
+composer.phar
+composer.lock
+
+#Bower and NPM files
+bower_components/*
+node_modules/*
+
+#Plato JS code reports
+public/jsreports/*
+
+#JSDoc generated documentation
+jsdocs/*
+
+#Compiled CSS
+css/main.css
+css/main.css.map
