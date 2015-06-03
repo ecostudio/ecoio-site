@@ -1,9 +1,9 @@
 .top-bar {
 	height top_bar_height
 
-	background-color white
+	background-color header_bg_color
 	color header_text_color
-	font-size 1.25em
+	font-size 1.15em
 	font-header()
 
 	position fixed
@@ -12,7 +12,7 @@
 	right 0
 	z-index z_topbar
 
-	box-shadow contrast_shadow
+	border-bottom 1px solid #e1e0e0
 
 	.ie8 & {
 		border-bottom 1px solid #ddd
@@ -141,21 +141,19 @@
 		}
 
 		a {
-			padding 0 (golden(5))vw
-			background-color transparent
-			transition background-color 0.6s ease
+			transition border-color 0.6s ease
+			border-bottom 3px solid transparent
 		}
 
 		.active a,
 		a:hover,
 		a:focus {
-			background-color header_nav_active_bg
 			outline 0
+			border-color #82b721
+		}
 
-			.ie8 & {
-				background-color transparent
-				text-decoration underline
-			}
+		.active a {
+			color #82b721
 		}
 	}
 

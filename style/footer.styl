@@ -1,10 +1,10 @@
 .bottom-bar {
 	text-align center
 	font-header()
+	color footer_text_color
 
 	nav {
-		background-color footer_menu_bgcolor
-		color footer_menu_color
+		background-color footer_bg_color
 		padding (golden(5, false))vw 0 (golden(4, false))vw
 		overflow hidden
 
@@ -18,6 +18,10 @@
 
 		+mobile() {
 			font-size 1.2em
+		}
+
+		li {
+			text-align left
 		}
 
 		a {
@@ -37,14 +41,18 @@
 		.level1 {
 			display inline-block
 			width (golden(1, false) - 50)vw
+			padding 0 1em 0 0
 			vertical-align top
+
+			&:last-child {
+				padding-right 0
+			}
 
 			.ie8 & {
 				width 20%
 			}
 
 			+tablet() {
-				column(1/4)
 			}
 
 			+mobile() {
@@ -53,11 +61,14 @@
 			}
 
 			> a {
-				line-height (golden(4, false))vw
-				font-size 1em
 				display block
 				padding 0
-				margin (golden(5, false))vw 0
+				margin (golden(5, false))vw 0 (golden(5, false) / 2)vw
+				border-bottom 1px solid ecogreen
+
+				font-size 1em
+				line-height (golden(4, false))vw
+				color white
 
 				+mobile() {
 					line-height 2
@@ -71,12 +82,16 @@
 					margin 0 auto
 				}
 			}
+
+			> ul {
+				padding-top (golden(5, false) / 2)vw
+			}
 		}
 	}
 }
 
 footer {
-	color footer_copy_color
+	background-color white
 	line-height (golden(4))vw
 	font-size 0.75em
 
