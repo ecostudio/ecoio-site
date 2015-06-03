@@ -30,6 +30,15 @@ $klein->app()->mailer = Swift_Mailer::newInstance(Swift_SendmailTransport::newIn
 //BASIC ROUTES //
 /////////////////
 
+$klein->respond('GET', '/', function($req, $resp, $service, $app) {
+	$routeData = $app->routeData;
+	$routeData['about']['active'] = true;
+
+	return $app->renderer->render('about', [
+		'routes' => $routeData
+	]);
+});
+
 foreach ($routes as $id => $data) {
 	$klein->respond('GET', $data['url'], function($req, $resp, $service, $app) use ($id, $data) {
 

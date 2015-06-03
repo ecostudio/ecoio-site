@@ -2,10 +2,10 @@
 	<h1>Elérhetőségeink</h1>
 
 	<section class="contact-form {{#formsuccess}}sent-success{{/formsuccess}}">
-		<h1>Írjon nekünk üzenetet!</h1>
+		<h1>Írj nekünk üzenetet!</h1>
 
 		<div class="success">
-			<p>Köszönjük, hogy írt nekünk!</p>
+			<p>Köszönjük, hogy írtál!</p>
 			<a href="{{routes.contact.url}}">Írok még egy levelet</a>
 		</div>
 
@@ -13,7 +13,7 @@
 
 			<label class="{{#formerrors.name}}has-error{{/formerrors.name}}">
 				<input type="text" name="name" required placeholder="Név" value="{{formdata.name}}" />
-				<span class="error">Kérjük adja meg a nevét!</span>
+				<span class="error">Kérjük, add meg a neved!</span>
 			</label>
 
 			<label class="{{#formerrors.subject}}has-error{{/formerrors.subject}}">
@@ -26,7 +26,7 @@
 
 			<label class="{{#formerrors.email2}}has-error{{/formerrors.email2}}">
 				<input type="email" name="email2" required placeholder="Email cím" value="{{formdata.email2}}" />
-				<span class="error">Kérjük adja meg az email címét!</span>
+				<span class="error">Kérjük, add meg az email címed!</span>
 			</label>
 
 			<label class="{{#formerrors.phone}}has-error{{/formerrors.phone}}">
@@ -35,7 +35,7 @@
 
 			<label class="{{#formerrors.message}}has-error{{/formerrors.message}}">
 				<textarea name="message" required placeholder="Üzenet szövege..." rows="8">{{formdata.message}}</textarea>
-				<span class="error">Kérjük ne felejtse el az üzenetet is megírni!</span>
+				<span class="error">Kérjük, ne felejtsd el az üzenetet is megírni!</span>
 			</label>
 
 			<button type="submit" class="action action-main">Küldés</button>

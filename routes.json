@@ -1,10 +1,14 @@
 {
-	"home": {
-		"url": "/"
-	},
-
 	"jobs": {
 		"url": "/karrier"
+	},
+
+	"about": {
+		"url": "/rolunk"
+	},
+
+	"office": {
+		"url": "/iroda"
 	},
 
 	"contact": {

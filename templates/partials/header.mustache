@@ -6,12 +6,20 @@
 	<div class="header-menu">
 		<nav class="header-nav">
 			<ul>
+				{{#routes.about}}
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kik vagyunk</a>
+				{{/routes.about}}
+
+				{{#routes.office}}
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Hol vagyunk</a>
+				{{/routes.office}}
+
 				{{#routes.jobs}}
-				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Karrier</a>
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kit keresünk</a>
 				{{/routes.jobs}}
 
 				{{#routes.contact}}
-				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kapcsolat</a>
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Jelentkezz!</a>
 				{{/routes.contact}}
 			</ul>
 		</nav>
