@@ -16,4 +16,8 @@ require(['jquery', 'hero', 'contact', 'menuToggle'],
 
 	contact('.contact-form');
 
+	$(':header[id]').wrapInner(function () {
+		return $('<a>').attr('href', '#' + this.id);
+	});
+
 });
