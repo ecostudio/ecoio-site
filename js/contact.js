@@ -11,7 +11,10 @@ define(['jquery', 'underscore'], function ($, _) {
 
 				var $labels = $form.find('label').removeClass('has-error');
 
-				$.post(window.location, $form.serialize(), function(response) {
+				var data = $form.serializeArray();
+				data.push({ name: 'referrer', value: document.referrer });
+
+				$.post(window.location, data, function(response) {
 					if (_(response).isEmpty()) {
 						$formCont.addClass('sent-success');
 					}

@@ -94,7 +94,7 @@ $klein->respond('POST', $routes['contact']['url'], function ($req, $resp, $servi
 	$honeypot = $req->param('email');
 	if ($form->isValid() && empty($honeypot)) {
 		$message = Swift_Message::newInstance()
-			->setSubject('Form üzenet - ' . $request->param('subject'))
+			->setSubject('Form üzenet - ' . $request->param('referrer'))
 			->setFrom($request->param('email2'))
 			->setTo(CONTACT_EMAIL)
 			->setBody($request->param('message'));
