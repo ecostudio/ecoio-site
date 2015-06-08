@@ -22,10 +22,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	&[id] {
 
-		&:target {
- 			font-weight bold
- 		}
-
 		&:before {
 			display block
 			content ''
@@ -38,13 +34,17 @@ h1, h2, h3, h4, h5, h6 {
 		a {
 			color inherit
 			text-decoration none
+			position relative
 
 			&:after {
 				@extend .fa, .fa-anchor:before
-				font-size 0.65em
+				abs-vcenter()
+
 				margin-left 0.75em
-				vertical-align 10%
-				opacity 0.3
+
+				font-size 0.6em
+
+				opacity 0
 				transition opacity 0.3s ease-out
 			}
 
@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
 				opacity 1
 			}
 		}
+
+		&:target a:after {
+ 			opacity 1
+ 		}
+
 	}
 }
 
