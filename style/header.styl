@@ -177,13 +177,16 @@
 		}
 
 		a {
-			color ecogreen
-			font-size header_social_size
-
 			@extend .fa
+			color header_text_color
+			font-size header_social_size
 			line-height top_bar_height
 
-			transition transform 0.2s ease
+			transition color 0.3s ease-out
+
+			&:hover {
+				color ecogreen
+			}
 
 			.ie8 & {
 				oneline-center(2em)
