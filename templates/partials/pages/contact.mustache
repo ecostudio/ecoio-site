@@ -29,6 +29,11 @@
 				<input type="phone" name="phone" placeholder="Telefonszám" value="{{formdata.phone}}" />
 			</label>
 
+			<div class="dropzone contact-dropzone">
+				<p class="dz-message">Dokumentumok feltöltése</p>
+				<button class="add" type="button"></button>
+			</div>
+
 			<label class="{{#formerrors.message}}has-error{{/formerrors.message}}">
 				<textarea name="message" required placeholder="Üzenet szövege..." rows="8">{{formdata.message}}</textarea>
 				<span class="error">Kérjük, ne felejtsd el az üzenetet is megírni!</span>

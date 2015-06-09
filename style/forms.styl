@@ -2,77 +2,77 @@ label {
 	display block
 	position relative
 	overflow hidden
+}
 
-	error-under() {
-		margin form_arrow_size 0 0
-		float left
-		left 0
-		top -2.6em
+error-under() {
+	margin form_arrow_size 0 0
+	float left
+	left 0
+	top -2.6em
 
-		transition top 0.5s ease-out, opacity 0.5s ease-out, max-height 0.2s ease-out
+	transition top 0.5s ease-out, opacity 0.5s ease-out, max-height 0.2s ease-out
 
-		&:before {
-			left form_arrow_size
-			top -(form_arrow_size)
-			transform none
-			margin 1px 0 0
+	&:before {
+		left form_arrow_size
+		top -(form_arrow_size)
+		transform none
+		margin 1px 0 0
 
-			border-width 0 form_arrow_size form_arrow_size form_arrow_size
-			border-color transparent transparent form_error_color transparent
-		}
-	}
-
-	.error {
-		display inline-block
-		opacity 0
-		position relative
-		left -50%
-		z-index -1
-		padding 0.1em 0.6em
-		margin-left (form_arrow_size * 2)
-
-		background-color form_error_color
-		color white
-
-		transition left 0.5s ease-out, opacity 0.5s ease-out
-
-		&:before {
-			content ''
-
-			square(0)
-			abs-vcenter()
-			left -(form_arrow_size)
-			margin 0 0 0 1px
-
-			border-style solid
-			border-width form_arrow_size form_arrow_size form_arrow_size 0
-			border-color transparent form_error_color transparent transparent
-		}
-
-		+mobile() {
-			error-under()
-			margin 0
-			max-height 0
-		}
-	}
-
-	textarea + .error {
-		error-under()
-	}
-
-	&.has-error .error {
-		opacity 1
-		left 0
-		top 0
-
-		+mobile() {
-			margin-top (form_arrow_size * 1.5)
-			max-height 5em
-		}
+		border-width 0 form_arrow_size form_arrow_size form_arrow_size
+		border-color transparent transparent form_error_color transparent
 	}
 }
 
-input, textarea {
+.error {
+	display inline-block
+	opacity 0
+	position relative
+	left -50%
+	z-index -1
+	padding 0.1em 0.6em
+	margin-left (form_arrow_size * 2)
+
+	background-color form_error_color
+	color white
+
+	transition left 0.5s ease-out, opacity 0.5s ease-out
+
+	&:before {
+		content ''
+
+		square(0)
+		abs-vcenter()
+		left -(form_arrow_size)
+		margin 0 0 0 1px
+
+		border-style solid
+		border-width form_arrow_size form_arrow_size form_arrow_size 0
+		border-color transparent form_error_color transparent transparent
+	}
+
+	+mobile() {
+		error-under()
+		margin 0
+		max-height 0
+	}
+}
+
+textarea + .error {
+	error-under()
+}
+
+&.has-error .error {
+	opacity 1
+	left 0
+	top 0
+
+	+mobile() {
+		margin-top (form_arrow_size * 1.5)
+		max-height 5em
+	}
+}
+
+input, textarea, .dropzone {
 	box-sizing border-box
 	border 1px solid body_text_color
 	padding 0.3em 0.5em
@@ -85,13 +85,152 @@ textarea {
 	margin-top 2em
 }
 
-input {
+input, .dropzone {
 	width ((1 - golden_ratio) * 100)%
 	margin 1em 0 1px
 
 	+mobile() {
 		width 100%
 	}
+}
+
+.dropzone {
+	display none
+	position relative
+	padding-right 4em
+	min-height 0
+
+	background white
+
+	transition width 0.2s ease-out, min-height 0.2s ease-out
+
+	button.add {
+		cover(0.3em, auto, 0.5em, auto)
+		margin 0
+		padding 0.25em 1em
+		cursor pointer
+		pointer-events none
+		opacity 1
+		transition opacity 0.1s ease-out
+	}
+
+	button.remove {
+		cover(left: auto)
+		margin 0
+		padding 0 0.5em
+	}
+
+	.dz-message {
+		color placeholder_color
+		margin 1px 0
+	}
+
+	.dz-preview {
+		position relative
+		background-color #eee
+		border 1px solid #ddd
+
+		& + .dz-preview {
+			margin-top 0.5em
+		}
+
+		&.dz-error .dz-error-mark {
+			opacity 1
+		}
+
+		&.dz-success .dz-success-mark {
+			opacity 1
+		}
+
+		&.dz-complete .dz-progress {
+			opacity 0
+		}
+
+		&.dz-error .error {
+			opacity 1
+			left 100%
+		}
+	}
+
+	.dz-details {
+		margin 0 7em 0 2em
+		white-space nowrap
+		text-overflow ellipsis
+		overflow hidden
+	}
+
+	.dz-success-mark, .dz-error-mark {
+		position absolute
+		top 0.2em
+		left 0.5em
+		opacity 0
+		transition opacity 0.2s ease-out
+	}
+
+	.dz-success-mark {
+		@extend .fa, .fa-check-circle
+		color ecogreen
+	}
+
+	.dz-error-mark {
+		@extend .fa, .fa-times-circle
+		color #ff9696
+	}
+
+	.dz-size {
+		cover(left: auto, right: 2em)
+		width 5em
+		text-align center
+
+		strong {
+			font-weight normal
+		}
+	}
+
+	.dz-progress {
+		cover(top: auto)
+		height 2px
+		opacity 1
+		transition opacity 0.2s ease-out
+	}
+
+	.dz-upload {
+		cover(right: auto)
+		background-color ecogreen
+		transition width 0.1s ease-out
+	}
+
+	.error {
+		position absolute
+		top 0
+		left 0
+		margin-left 5.5em
+		white-space nowrap
+	}
+
+	&.dz-clickable {
+		cursor pointer
+	}
+
+	&.dz-drag-hover {
+		border-style dashed
+		min-height 10em
+		width 100%
+
+		button.add {
+			opacity 0
+		}
+	}
+
+	&.dz-started {
+		.dz-message {
+			display none
+		}
+	}
+}
+
++placeholder() {
+	color placeholder_color
 }
 
 button {
@@ -115,6 +254,14 @@ button.action {
 
 button.cancel {
 	float left
+}
+
+button.add {
+	@extend .fa, .fa-plus
+}
+
+button.remove {
+	@extend .fa, .fa-minus
 }
 
 .honeypot {
