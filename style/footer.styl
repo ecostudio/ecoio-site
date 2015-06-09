@@ -39,6 +39,7 @@
 		}
 
 		.level1 {
+			box-sizing border-box
 			display inline-block
 			width (golden(1, false) - 50)vw
 			padding 0 1em 0 0
@@ -53,10 +54,16 @@
 			}
 
 			+tablet() {
+				column(1/4, cycle: 4, gutter: 0)
+				padding 0 1em
+
+				&:last-child {
+					padding-right 1em
+				}
 			}
 
 			+mobile() {
-				column(1/2, 0, 2)
+				column(1/2, cycle: 2)
 				margin 1em 0
 			}
 
