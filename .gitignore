@@ -3,6 +3,7 @@ Thumbs.db
 tmp
 .ftppass
 dist/**
+uploads/**
 
 #Composer
 /vendor

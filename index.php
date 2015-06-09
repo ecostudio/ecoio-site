@@ -5,6 +5,7 @@
 /////////////
 
 const CONTACT_EMAIL = 'nr@ecostudio.hu';
+const UPLOAD_DIR = 'uploads/';
 
 //////////
 //SETUP //
@@ -68,15 +69,17 @@ foreach ($routes as $id => $data) {
 $klein->onHttpError(function ($code, $router) {
 	$app = $router->app();
 
-	$page = $app->renderer->render(
-		$code === 404 ? '404' : 'httperror',
-		[
-			'routes' => $app->routeData,
-			'data' => [ 'code' => $code ]
-		]
-	);
+	if (in_array($code, [404, 403])) {
+		$page = $app->renderer->render(
+			$code === 404 ? '404' : 'httperror',
+			[
+				'routes' => $app->routeData,
+				'data' => [ 'code' => $code ]
+			]
+		);
 
-	$router->response()->body($page);
+		$router->response()->body($page);
+	}
 });
 
 /////////////////
@@ -94,10 +97,17 @@ $klein->respond('POST', $routes['contact']['url'], function ($req, $resp, $servi
 	$honeypot = $req->param('email');
 	if ($form->isValid() && empty($honeypot)) {
 		$message = Swift_Message::newInstance()
-			->setSubject('Form üzenet - ' . $request->param('referrer'))
-			->setFrom($request->param('email2'))
+			->setSubject('Form üzenet - ' . $req->param('referrer'))
+			->setFrom($req->param('email2'))
 			->setTo(CONTACT_EMAIL)
-			->setBody($request->param('message'));
+			->setBody($req->param('message'));
+
+		$files = json_decode($req->param('files'));
+
+		foreach($files as $file) {
+			$message->attach(Swift_Attachment::fromPath(UPLOAD_DIR . $file));
+		}
+
 		$app->mailer->send($message);
 	}
 
@@ -108,6 +118,38 @@ $klein->respond('POST', $routes['contact']['url'], function ($req, $resp, $servi
 		$app->prg->store($form->errors, $form->data);
 		$service->refresh();
 	}
+});
+
+////////////////
+//FILE UPLOAD //
+////////////////
+
+$klein->respond('POST', '/fileupload', function ($req, $resp, $service, $app) {
+
+	$file = $req->files()['file'];
+
+	if ($file && !$file['error']) {
+		$tmpName = $file['tmp_name'];
+		$origName = $file['name'];
+		$ext = pathinfo($origName, PATHINFO_EXTENSION);
+		$size = filesize($tmpName);
+		$newName = md5(uniqid()) . '.' . $ext;
+		$allowed = ['doc','docx','pdf','xml','jpg','png','gif','jpeg','txt','rtf'];
+
+		if ($size > 2000000) {
+			throw Klein\Exceptions\HttpException::createFromCode(413);
+		}
+
+		if (!in_array($ext, $allowed)) {
+			throw Klein\Exceptions\HttpException::createFromCode(415);
+		}
+
+		if (move_uploaded_file($tmpName, UPLOAD_DIR . $newName)) {
+			return $newName;
+		}
+	}
+
+	throw Klein\Exceptions\HttpException::createFromCode(500);
 });
 
 ////////
