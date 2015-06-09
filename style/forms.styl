@@ -146,9 +146,17 @@ input, .dropzone {
 			opacity 0
 		}
 
-		&.dz-error .error {
-			opacity 1
-			left 100%
+		&.dz-error {
+			margin-bottom 2.5em
+
+			.error {
+				opacity 1
+				left 100%
+
+				+mobile() {
+					left 0
+				}
+			}
 		}
 	}
 
@@ -206,6 +214,13 @@ input, .dropzone {
 		left 0
 		margin-left 5.5em
 		white-space nowrap
+
+		+mobile() {
+			top 2em
+			margin 0
+			z-index 1
+			max-height none
+		}
 	}
 
 	&.dz-clickable {
