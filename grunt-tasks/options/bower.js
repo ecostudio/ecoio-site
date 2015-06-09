@@ -22,6 +22,11 @@ module.exports = {
 						'slick/slick.js',
 						'slick/slick.css'
 					]
+				},
+				'dropzone': {
+					files: [
+						'dist/dropzone-amd-module.js'
+					]
 				}
 			}
 
