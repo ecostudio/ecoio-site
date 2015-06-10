@@ -53,14 +53,6 @@
 				width 20%
 			}
 
-			+below(4) {
-				padding 0 1em
-
-				&:last-child {
-					padding-right 1em
-				}
-			}
-
 			+tablet() {
 				column(1/4, cycle: 4, gutter: 0)
 			}
@@ -68,6 +60,15 @@
 			+mobile() {
 				column(1/2, cycle: 2, gutter: 0)
 				margin 1em 0
+			}
+
+			+below(4) {
+				padding 0 1em
+				text-align left
+
+				&:last-child {
+					padding-right 1em
+				}
 			}
 
 			> a {
@@ -82,7 +83,6 @@
 
 				+mobile() {
 					line-height 2
-					text-align left
 				}
 
 				&:after {
