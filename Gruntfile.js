@@ -16,6 +16,7 @@ module.exports = function(grunt) {
 		'clean:dist',
 		'stylus',
 		'requirejs',
+		'svg2png',
 		'copy:dist',
 		'csso',
 		'svgmin'
@@ -28,8 +29,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('deploy', [
-		'default',
-		'ftp-deploy:quick'
+		'default'
 	]);
 
 	function loadConfig(path) {
