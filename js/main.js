@@ -1,7 +1,9 @@
-require(['jquery', 'hero', 'contact', 'menuToggle'],
-	function ($, hero, contact, menuToggle) {
+require(['jquery', 'hero', 'contact', 'menuToggle', 'svgeezy'],
+	function ($, hero, contact, menuToggle, svgeezy) {
 
 	console.log('Welcome to EcoStudio!');
+
+	svgeezy.init();
 
 	hero('.hero', {
 		adaptiveHeight: true,

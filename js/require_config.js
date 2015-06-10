@@ -6,9 +6,13 @@
 			underscore: 'lib/underscore',
 			jquery: 'lib/jquery',
 			slick: 'lib/slick',
-			dropzone: 'lib/dropzone-amd-module'
+			dropzone: 'lib/dropzone-amd-module',
+			svgeezy: 'lib/svgeezy'
 		},
 		shim: {
+			svgeezy: {
+				exports: 'svgeezy'
+			}
 		}
 	});
 
