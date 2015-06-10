@@ -84,8 +84,8 @@
 		font-size 1em
 
 		.ie8 & {
-			height 1.5em
-			padding 0.75em 0
+			height 2.5em
+			padding 0.25em 0
 
 			img {
 				height 100%
@@ -186,7 +186,6 @@
 			color header_text_color
 			font-size header_social_size
 			line-height top_bar_height
-
 			transition color 0.3s ease-out
 
 			&:hover {
@@ -194,15 +193,11 @@
 			}
 
 			.ie8 & {
-				oneline-center(2em)
+				oneline-center(1.9em)
 			}
 
 			+tablet() {
 				line-height top_bar_height * tablet_multiplier
-
-				.ie8 & {
-					oneline-center(1em)
-				}
 			}
 
 			+mobile() {
