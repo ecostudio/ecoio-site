@@ -1,4 +1,4 @@
-require(['jquery', 'hero', 'contact', 'menuToggle', 'svgeezy'],
+require(['jquery', 'hero', 'contact', 'menuToggle', 'svgeezy', 'placeholders'],
 	function ($, hero, contact, menuToggle, svgeezy) {
 
 	console.log('Welcome to EcoStudio!');

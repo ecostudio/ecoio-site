@@ -27,6 +27,11 @@ module.exports = {
 					files: [
 						'dist/dropzone-amd-module.js'
 					]
+				},
+				'placeholders': {
+					files: [
+						'dist/placeholders.jquery.js'
+					]
 				}
 			}
 

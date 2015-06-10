@@ -15,7 +15,8 @@
     "selectivizr": "~1.0.2",
     "respond": "~1.4.2",
     "dropzone": "~4.0.1",
-    "svgeezy": "~1.0.0"
+    "svgeezy": "~1.0.0",
+    "placeholders": "~4.0.1"
   },
   "authors": [
     "Kapa <nr@ecostudio.hu>"
