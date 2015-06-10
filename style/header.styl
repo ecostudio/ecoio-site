@@ -115,7 +115,7 @@
 				image-container(width: auto)
 				float none
 				display inline-block
-				padding (1 - golden_ratio)em 0
+				padding (golden_ratio)em 0
 
 				&:before {
 					content none
@@ -123,7 +123,7 @@
 
 				img {
 					display block
-					height 1.4em
+					height 2.2em
 				}
 			}
 		}
@@ -143,6 +143,11 @@
 		a {
 			transition border-color 0.6s ease
 			border-bottom 3px solid transparent
+
+			+mobile() {
+				border-bottom none
+				border-left 3px solid transparent
+			}
 		}
 
 		.active a,
@@ -240,7 +245,7 @@
 			top 100%
 			width ((1 - golden_ratio) * 100)%
 			z-index z_topmenu_drawer
-			transition left 0.2s ease-in
+			transition left 0.2s ease-out
 
 			background-color #fff
 			border 1px solid #bbb
