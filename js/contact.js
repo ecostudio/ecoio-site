@@ -41,7 +41,10 @@ define(['jquery', 'underscore', 'dropzone'], function ($, _, Dropzone) {
 				dictInvalidFileType: 'Nem engedélyezett fájltípus.',
 				dictFileTooBig: 'Túl nagy fájl, {{maxFilesize}} MB a maximum.',
 				dictResponseError: 'Feltöltési hiba.',
-				dictMaxFilesExceeded: 'Több fájlt nem tölthetsz fel.'
+				dictMaxFilesExceeded: 'Több fájlt nem tölthetsz fel.',
+				fallback: function () {
+					$dzone.hide();
+				}
 			});
 
 			dz.on('success', function (file, response) {
