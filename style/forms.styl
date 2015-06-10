@@ -147,7 +147,10 @@ input, .dropzone {
 		}
 
 		&.dz-error {
-			margin-bottom 2.5em
+
+			+below(4) {
+				margin-bottom 2.5em
+			}
 
 			.error {
 				opacity 1
