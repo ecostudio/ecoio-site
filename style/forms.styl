@@ -20,6 +20,10 @@ error-under() {
 
 		border-width 0 form_arrow_size form_arrow_size form_arrow_size
 		border-color transparent transparent form_error_color transparent
+
+		.ie8 & {
+			margin-top 1px
+		}
 	}
 }
 
@@ -48,6 +52,10 @@ error-under() {
 		border-style solid
 		border-width form_arrow_size form_arrow_size form_arrow_size 0
 		border-color transparent form_error_color transparent transparent
+
+		.ie8 & {
+			margin-top -0.5em
+		}
 	}
 
 	+mobile() {
