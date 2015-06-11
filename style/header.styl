@@ -89,6 +89,7 @@
 
 			img {
 				height 100%
+				filter none
 			}
 		}
 
@@ -154,11 +155,19 @@
 		a:hover,
 		a:focus {
 			outline 0
-			border-color #82b721
+			border-color ecogreen
+
+			.ie8 & {
+				border-color ecogreen_ie8
+			}
 		}
 
 		.active a {
-			color #82b721
+			color ecogreen
+
+			.ie8 & {
+				color ecogreen_ie8
+			}
 		}
 	}
 
@@ -190,6 +199,10 @@
 
 			&:hover {
 				color ecogreen
+
+				.ie8 & {
+					color ecogreen_ie8
+				}
 			}
 
 			.ie8 & {
@@ -308,6 +321,10 @@
 		&.open {
 			background-color ecogreen
 			color #fff
+
+			.ie8 & {
+				background-color ecogreen_ie8
+			}
 		}
 	}
 

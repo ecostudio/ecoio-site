@@ -23,6 +23,8 @@ error-under() {
 
 		.ie8 & {
 			margin-top 1px
+			border-right-color transparent
+			border-bottom-color form_error_color_ie8
 		}
 	}
 }
@@ -41,6 +43,10 @@ error-under() {
 
 	transition left 0.5s ease-out, opacity 0.5s ease-out
 
+	.ie8 & {
+		background-color form_error_color_ie8
+	}
+
 	&:before {
 		content ''
 
@@ -55,6 +61,7 @@ error-under() {
 
 		.ie8 & {
 			margin-top -0.5em
+			border-right-color form_error_color_ie8
 		}
 	}
 
@@ -193,7 +200,7 @@ input, .dropzone {
 
 	.dz-error-mark {
 		@extend .fa, .fa-times-circle
-		color #ff9696
+		color form_error_color
 	}
 
 	.dz-size {
@@ -271,6 +278,11 @@ button {
 
 	form & {
 		margin 2em 0 0
+	}
+
+	.ie8 & {
+		background-color ecogreen_ie8
+		border-color darken(ecogreen_ie8, 5%)
 	}
 }
 
