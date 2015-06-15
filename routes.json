@@ -1,14 +1,18 @@
 {
-	"jobs": {
-		"url": "/karrier"
+	"about": {
+		"url": "/kik-vagyunk"
 	},
 
-	"about": {
-		"url": "/rolunk"
+	"projects": {
+		"url": "/mit-csinalunk"
 	},
 
 	"office": {
-		"url": "/iroda"
+		"url": "/milyen-nalunk"
+	},
+
+	"jobs": {
+		"url": "/kit-keresunk"
 	},
 
 	"contact": {

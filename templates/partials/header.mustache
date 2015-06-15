@@ -7,15 +7,19 @@
 		<nav class="header-nav">
 			<ul>
 				{{#routes.about}}
-				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kik vagyunk</a>
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kik vagyunk?</a>
 				{{/routes.about}}
 
+				{{#routes.projects}}
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Mit csinálunk?</a>
+				{{/routes.projects}}
+
 				{{#routes.office}}
-				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Hol vagyunk</a>
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Milyen nálunk?</a>
 				{{/routes.office}}
 
 				{{#routes.jobs}}
-				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kit keresünk</a>
+				<li{{#active}} class="active"{{/active}}><a href="{{url}}">Kit keresünk?</a>
 				{{/routes.jobs}}
 
 				{{#routes.contact}}
