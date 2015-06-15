@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 		'svg2png',
 		'concat:ie8',
 		'copy:dist',
+		'uglify',
 		'csso',
 		'svgmin'
 	]);
