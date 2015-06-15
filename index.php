@@ -103,11 +103,12 @@ $klein->respond('POST', $routes['contact']['url'], function ($req, $resp, $servi
 
 	$honeypot = $req->param('email');
 	if ($form->isValid() && empty($honeypot)) {
+		$msg = 'Telefon:' . $req->param('phone') . "\n\n" . $req->param('message');
 		$message = Swift_Message::newInstance()
 			->setSubject('Form üzenet - ' . $req->param('referrer'))
-			->setFrom($req->param('email2'))
+			->setFrom([$req->param('email2') => $req->param('name')])
 			->setTo(CONTACT_EMAIL)
-			->setBody($req->param('message'));
+			->setBody($msg);
 
 		$files = json_decode($req->param('files'));
 
