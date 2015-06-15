@@ -1,7 +1,7 @@
 {
   "name": "eco.io",
   "version": "0.0.1",
-  "repository": "git@EcoDevServer:ecostudio-site/site.git",
+  "repository": "git@EcoDevServer:ecostudio-site/ecoio.git",
   "devDependencies": {
     "autoprefixer-stylus": "^0.5.0",
     "bower": "~1.3",
