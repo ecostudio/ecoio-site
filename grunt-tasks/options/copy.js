@@ -8,6 +8,7 @@ module.exports = {
 				src: [
 					'js/require_config.js',
 					'js/lib/require.js',
+					'js/ie8/**',
 					'fonts/**',
 					'image/**',
 					'vendor/**',

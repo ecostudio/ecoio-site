@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 		'stylus',
 		'requirejs',
 		'svg2png',
+		'concat:ie8',
 		'copy:dist',
 		'csso',
 		'svgmin'
@@ -25,6 +26,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('setup', [
 		'clean:jslib',
 		'bower',
+		'concat:ie8',
 		'stylus'
 	]);
 
