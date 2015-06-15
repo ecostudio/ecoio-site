@@ -1,4 +1,8 @@
 RewriteEngine On
+
+RewriteRule js/[0-9]*/(.*) js/$1
+RewriteRule css/([^.]*)\.[0-9]*\.css css/$1.css
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /index.php [L]
 

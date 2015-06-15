@@ -10,7 +10,7 @@
 		<meta name="author" content="EcoStudio" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/main.{{moddates.css}}.css" />
 		<!--[if lte IE 9]>
 			<script>
 			if (!window.console) window.console = {};
@@ -53,7 +53,7 @@
 		<script src="js/lib/require.js"></script>
 		<script src="js/require_config.js"></script>
 		<script>
-			require.config({ baseUrl: 'js' });
+			require.config({ baseUrl: 'js/{{moddates.js}}' });
 			require(['main']);
 		</script>
 

@@ -26,6 +26,10 @@ $klein->app()->renderer = new MustacheTemplateRenderer(
 $routes = $klein->app()->routeData = json_decode(file_get_contents('routes.json'), true);
 $klein->app()->prg = new FormPersister();
 $klein->app()->mailer = Swift_Mailer::newInstance(Swift_SendmailTransport::newInstance());
+$klein->app()->moddates = [
+	'css' => filemtime('css/main.css'),
+	'js' => filemtime('js/main.js')
+];
 
 /////////////////
 //BASIC ROUTES //
@@ -36,7 +40,8 @@ $klein->respond('GET', '/', function($req, $resp, $service, $app) {
 	$routeData['about']['active'] = true;
 
 	return $app->renderer->render('about', [
-		'routes' => $routeData
+		'routes' => $routeData,
+		'moddates' => $app->moddates
 	]);
 });
 
@@ -53,7 +58,8 @@ foreach ($routes as $id => $data) {
 			'data' => $data,
 			'formerrors' => $errors,
 			'formsuccess' => $app->prg->getSuccess(),
-			'formdata' => count($errors) ? $app->prg->getData() : []
+			'formdata' => count($errors) ? $app->prg->getData() : [],
+			'moddates' => $app->moddates
 		];
 
 		$app->prg->reset();
@@ -74,7 +80,8 @@ $klein->onHttpError(function ($code, $router) {
 			$code === 404 ? '404' : 'httperror',
 			[
 				'routes' => $app->routeData,
-				'data' => [ 'code' => $code ]
+				'data' => [ 'code' => $code ],
+				'moddates' => $app->moddates
 			]
 		);
 

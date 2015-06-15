@@ -1,4 +1,8 @@
 RewriteEngine On
+
+RewriteRule js/[0-9]*/(.*) js/$1
+RewriteRule css/([^.]*)\.[0-9]*\.css css/$1.css
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /index.php [L]
 
@@ -7,3 +11,12 @@ AddType video/mp4  .mp4
 AddType video/webm .webm
 
 SetEnvIfNoCase Request_URI \.(og[gv]|mp4|m4v|webm)$ no-gzip dont-vary
+
+<FilesMatch "\.(ico|svg|woff|eot|ttf|jpg|png|gif|css|js)$">
+	Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "public, must-revalidate, proxy-revalidate, no-transform"
+    Header unset Server
+</IfModule>
