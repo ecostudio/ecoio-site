@@ -1,18 +1,18 @@
-require(['jquery', 'hero', 'contact', 'menuToggle', 'svgeezy', 'placeholders'],
-	function ($, hero, contact, menuToggle, svgeezy) {
+require(['jquery', 'contact', 'menuToggle', 'svgeezy', 'placeholders'],
+	function ($, contact, menuToggle, svgeezy) {
 
 	console.log('Welcome to EcoStudio!');
 
 	svgeezy.init();
 
-	hero('.hero', {
+	/*hero('.hero', {
 		adaptiveHeight: true,
 		slide: '.slide',
 		media: '.media',
 		playButton: '.hero-play',
 		prevArrow: '.hero .prev',
 		nextArrow: '.hero .next'
-	});
+	});*/
 
 	menuToggle('.menu-toggle', '.header-menu', 'open');
 
