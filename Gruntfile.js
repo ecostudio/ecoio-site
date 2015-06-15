@@ -29,7 +29,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('deploy', [
-		'default'
+		'default',
+		'rsync:prod'
 	]);
 
 	function loadConfig(path) {

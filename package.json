@@ -18,6 +18,7 @@
     "grunt-jsdoc": "^0.5.7",
     "grunt-plato": "^1.2.1",
     "grunt-responsive-videos": "^0.1.2",
+    "grunt-rsync": "^0.6.2",
     "grunt-svg2png": "^0.2.7",
     "grunt-svgmin": "^2.0.1",
     "jeet": "^6.1.2",
