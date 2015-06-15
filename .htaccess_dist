@@ -12,7 +12,7 @@ AddType video/webm .webm
 
 SetEnvIfNoCase Request_URI \.(og[gv]|mp4|m4v|webm)$ no-gzip dont-vary
 
-<FilesMatch "\.(ico|svg|woff|eot|ttf|jpg|png|gif|css|js)$">
+<FilesMatch "\.(ico|svg|woff|woff2|eot|ttf|jpg|png|gif|css|js)$">
 	Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 
