@@ -10,6 +10,8 @@ AddType video/ogg  .ogv
 AddType video/mp4  .mp4
 AddType video/webm .webm
 
+SetEnv PRODUCTION 1
+
 SetEnvIfNoCase Request_URI \.(og[gv]|mp4|m4v|webm)$ no-gzip dont-vary
 
 <FilesMatch "\.(ico|svg|woff|woff2|eot|ttf|jpg|png|gif|css|js)$">

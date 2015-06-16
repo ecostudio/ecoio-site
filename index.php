@@ -30,6 +30,7 @@ $klein->app()->moddates = [
 	'css' => filemtime('css/main.css'),
 	'js' => filemtime('js/main.js')
 ];
+$klein->app()->production = !!apache_getenv('PRODUCTION');
 
 /////////////////
 //BASIC ROUTES //
@@ -41,7 +42,8 @@ $klein->respond('GET', '/', function($req, $resp, $service, $app) {
 
 	return $app->renderer->render('about', [
 		'routes' => $routeData,
-		'moddates' => $app->moddates
+		'moddates' => $app->moddates,
+		'production' => $app->production
 	]);
 });
 
@@ -59,7 +61,8 @@ foreach ($routes as $id => $data) {
 			'formerrors' => $errors,
 			'formsuccess' => $app->prg->getSuccess(),
 			'formdata' => count($errors) ? $app->prg->getData() : [],
-			'moddates' => $app->moddates
+			'moddates' => $app->moddates,
+			'production' => $app->production
 		];
 
 		$app->prg->reset();
@@ -81,7 +84,8 @@ $klein->onHttpError(function ($code, $router) {
 			[
 				'routes' => $app->routeData,
 				'data' => [ 'code' => $code ],
-				'moddates' => $app->moddates
+				'moddates' => $app->moddates,
+				'production' => $app->production
 			]
 		);
 
