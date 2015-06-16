@@ -54,6 +54,7 @@
 
 		i[data-title] {
 			position relative
+			transition transform 0.3s ease-out
 
 			&:after {
 				content attr(data-title)
@@ -80,6 +81,7 @@
 				z-index z_team_icon_hover
 				outline none
 				color ecogreen
+				transform scale(1.1)
 
 				&:after {
 					opacity 1
