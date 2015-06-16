@@ -73,6 +73,7 @@ define(['jquery', 'underscore', 'dropzone'], function ($, _, Dropzone) {
 				$.post(window.location, data, function(response) {
 					if (_(response).isEmpty()) {
 						$formCont.addClass('sent-success');
+						if (ga) ga.push(['trackEvent', 'Jelentkezés', 'Elküldve', 'Űrlap']);
 					}
 					else {
 						_(response).each(function (key) {
