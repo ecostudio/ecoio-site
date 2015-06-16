@@ -4,7 +4,7 @@
 //SETTINGS //
 /////////////
 
-const CONTACT_EMAIL = 'nr@ecostudio.hu';
+const CONTACT_EMAIL = 'szm@ecostudio.hu';
 const UPLOAD_DIR = 'uploads/';
 
 //////////
