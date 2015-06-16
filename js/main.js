@@ -1,5 +1,5 @@
-require(['jquery', 'contact', 'menuToggle', 'svgeezy', 'placeholders'],
-	function ($, contact, menuToggle, svgeezy) {
+require(['jquery', 'contact', 'menuToggle', 'svgeezy', 'slick', 'placeholders'],
+	function ($, contact, menuToggle, svgeezy, slick) {
 
 	console.log('Welcome to EcoStudio!');
 
@@ -25,8 +25,11 @@ require(['jquery', 'contact', 'menuToggle', 'svgeezy', 'placeholders'],
 	$('.team-member-icons i').attr('data-title', function () {
 		var $this = $(this);
 		var title = $this.attr('title');
-		console.log($this.removeAttr('title'));
 		return title;
+	});
+
+	$('.full-image-list').slick({
+		adaptiveHeight: true
 	});
 
 });

@@ -11,7 +11,7 @@
 		z-index 1 //for IE8, but won't work with .ie8 somehow
 	}
 
-	.prev, .next {
+	.prev, .next, .slick-prev, .slick-next {
 		background none
 		border none
 		outline none
@@ -39,12 +39,12 @@
 		}
 	}
 
-	.prev {
+	.prev, .slick-prev {
 		@extend .fa-angle-left
 		left 0
 	}
 
-	.next {
+	.next, .slick-next {
 		@extend .fa-angle-right
 		right 0
 	}
