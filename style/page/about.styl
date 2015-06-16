@@ -42,5 +42,45 @@
 	li {
 		display inline-block
 		margin-right 0.5em
+		cursor pointer
+
+		i[data-title] {
+			position relative
+
+			&:after {
+				content attr(data-title)
+				abs-hcenter()
+				top -120%
+				white-space nowrap
+
+				padding 0.25em 0.5em
+				border-radius 3px
+				box-shadow 1px 1px 5px #777
+
+				font-text()
+				font-size 0.6em
+				color white
+				background-color ecogreen
+
+				pointer-events none
+
+				opacity 0
+				transition opacity 0.3s ease-out
+			}
+
+			&:hover, &:focus {
+				z-index z_team_icon_hover
+				outline none
+				color ecogreen
+
+				&:after {
+					opacity 1
+				}
+			}
+
+			&:hover {
+				z-index z_team_icon_hover + 1
+			}
+		}
 	}
 }

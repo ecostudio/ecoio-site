@@ -22,4 +22,11 @@ require(['jquery', 'contact', 'menuToggle', 'svgeezy', 'placeholders'],
 		return $('<a>').attr('href', '#' + this.id);
 	});
 
+	$('.team-member-icons i').attr('data-title', function () {
+		var $this = $(this);
+		var title = $this.attr('title');
+		console.log($this.removeAttr('title'));
+		return title;
+	});
+
 });
