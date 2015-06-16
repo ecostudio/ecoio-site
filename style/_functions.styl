@@ -53,7 +53,7 @@ abs-hcenter() {
 	left 50%
 	transform translateX(-50%)
 	.ie8 & {
-		margin-left -(@width / 2)%
+		margin-left -(@width / 2)% unless @width == null
 	}
 }
 
