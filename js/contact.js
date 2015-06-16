@@ -25,7 +25,7 @@ define(['jquery', 'underscore', 'dropzone'], function ($, _, Dropzone) {
 			var dz = new Dropzone($dzone.get(0), {
 				url: 'fileupload',
 				previewTemplate: dzTemplate,
-				maxFilesize: 2,
+				maxFilesize: 25,
 				createImageThumbnails: false,
 				maxFiles: 5,
 				acceptedFiles: [

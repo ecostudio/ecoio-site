@@ -148,7 +148,7 @@ $klein->respond('POST', '/fileupload', function ($req, $resp, $service, $app) {
 		$newName = md5(uniqid()) . '.' . $ext;
 		$allowed = ['doc','docx','pdf','xml','jpg','png','gif','jpeg','txt','rtf'];
 
-		if ($size > 2000000) {
+		if ($size > 25000000) {
 			throw Klein\Exceptions\HttpException::createFromCode(413);
 		}
 
