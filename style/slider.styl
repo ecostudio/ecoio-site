@@ -12,6 +12,8 @@
 	}
 
 	.prev, .next, .slick-prev, .slick-next {
+		@extend .icon
+
 		background none
 		border none
 		outline none
@@ -21,7 +23,6 @@
 		abs-vcenter()
 		z-index 2
 
-		@extend .fa
 		font-size 4em
 
 		.ie8 & {
@@ -40,12 +41,12 @@
 	}
 
 	.prev, .slick-prev {
-		@extend .fa-angle-left
+		@extend .icon-angle-left
 		left 0
 	}
 
 	.next, .slick-next {
-		@extend .fa-angle-right
+		@extend .icon-angle-right
 		right 0
 	}
 }

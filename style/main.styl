@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 			position relative
 
 			&:after {
-				@extend .fa, .fa-anchor:before
+				@extend .icon, .icon-anchor:before
 				abs-vcenter()
 
 				margin-left 0.75em
@@ -130,10 +130,10 @@ li {
 
 ul {
 	li {
-		@extend .fa-circle
+		@extend .icon-circle
 
 		&:before {
-			@extend .fa
+			@extend .icon
 			line-height inherit
 			font-size 0.9em
 		}
