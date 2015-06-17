@@ -59,7 +59,7 @@
 			&:after {
 				content attr(data-title)
 				abs-hcenter()
-				top -120%
+				top -100%
 				white-space nowrap
 
 				padding 0.25em 0.5em
@@ -74,7 +74,7 @@
 				pointer-events none
 
 				opacity 0
-				transition opacity 0.3s ease-out
+				transition opacity 0.3s ease-out, top 0.3s ease-out
 			}
 
 			&:hover, &:focus {
@@ -85,6 +85,7 @@
 
 				&:after {
 					opacity 1
+					top -120%
 				}
 			}
 
