@@ -234,8 +234,20 @@ a {
 	}
 }
 
+.svg-fallback {
+	display none !important
+
+	.ie8 & {
+		display block !important
+	}
+}
+
 .ie8 img {
 	filter unquote('gray')
+}
+
+.ie8 .svg {
+	display none !important
 }
 
 .ie8 {
