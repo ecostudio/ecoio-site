@@ -110,3 +110,78 @@
 		}
 	}
 }
+
+.manifesto-section {
+	position relative
+
+	margin 1em 0
+	padding 2em
+	border-radius 3px
+
+	background-color #f8f8f8
+
+	h3 {
+		font-size 1.5em
+		line-height 1
+		margin-bottom 0.5em
+		overflow hidden
+		text-align left
+	}
+
+	.captioned-image {
+		float left
+		width 9em
+		margin-right 2em
+		margin-left 4em
+
+		img {
+			width 100%
+			border-radius 50%
+		}
+
+		+mobile() {
+			float none
+			width 100%
+			margin 0 0 1em
+			overflow hidden
+
+			img {
+				float left
+				width 25%
+				margin-right 1em
+			}
+
+			.caption {
+				font-size 1.5em
+			}
+		}
+	}
+
+	&:before, &:after {
+		position absolute
+		font-size 3em
+	}
+
+	&:before {
+		@extend .icon, .icon-quote-left:before
+		top 0.66em
+		left 0.66em
+
+		+mobile() {
+			top -0.33em
+			left 0
+		}
+	}
+
+	&:after {
+		@extend .icon, .icon-quote-right:before
+		bottom 0.66em
+		right 0.66em
+
+		+mobile() {
+			bottom -0.33em
+			right 0
+		}
+	}
+
+}
