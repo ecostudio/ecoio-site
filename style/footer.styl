@@ -102,23 +102,24 @@
 			}
 		}
 	}
+
+	footer {
+		background-color white
+		line-height (golden(4))vw
+		font-size 0.75em
+
+		.ie8 & {
+			line-height 50px
+		}
+
+		+below(4) {
+			line-height 2
+		}
+
+		p {
+			margin 0
+			line-height inherit
+		}
+	}
 }
 
-footer {
-	background-color white
-	line-height (golden(4))vw
-	font-size 0.75em
-
-	.ie8 & {
-		line-height 50px
-	}
-
-	+below(4) {
-		line-height 2
-	}
-
-	p {
-		margin 0
-		line-height inherit
-	}
-}
