@@ -10,12 +10,23 @@
 			stack()
 		}
 
+		.ie8 & {
+			float none
+			display inline-block
+			margin-right 0
+			vertical-align top
+		}
+
 		.icon {
 			font-size 3.5em
 			color ecogreen
 			position absolute
 			top 0.6em
 			left 0
+
+			.ie8 & {
+				color ecogreen_ie8
+			}
 		}
 	}
 
