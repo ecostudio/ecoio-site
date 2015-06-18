@@ -28,8 +28,6 @@ require(['jquery', 'contact', 'menuToggle', 'svgeezy', 'slick', 'placeholders'],
 		return title;
 	});
 
-	$('.full-image-list').slick({
-		adaptiveHeight: true
-	});
+	$('.full-image-list').slick();
 
 });
