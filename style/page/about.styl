@@ -10,6 +10,10 @@
 			stack()
 		}
 
+		.ie8 & {
+			margin-right 0
+		}
+
 		h3 {
 			text-align left
 			line-height 1.25
@@ -19,7 +23,6 @@
 
 .team-member-media {
 	column(1/3)
-	shift(-2/3)
 	image-container()
 
 	video {
@@ -29,8 +32,11 @@
 
 .team-member-data {
 	column(2/3)
-	shift(1/3)
 	padding 1em 0
+
+	.ie8 & {
+		margin-right 0
+	}
 }
 
 .team-member-field {
@@ -74,6 +80,12 @@
 
 				opacity 0
 				transition opacity 0.3s ease-out, top 0.3s ease-out
+
+				.ie8 & {
+					display none
+					left 0
+					background-color #555
+				}
 			}
 
 			&:hover, &:focus {
@@ -84,6 +96,14 @@
 				&:after {
 					opacity 1
 					top -120%
+
+					.ie8 & {
+						display block
+					}
+				}
+
+				.ie8 & {
+					color #555
 				}
 			}
 
