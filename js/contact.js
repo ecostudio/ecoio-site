@@ -73,7 +73,7 @@ define(['jquery', 'underscore', 'dropzone'], function ($, _, Dropzone) {
 				$.post(window.location, data, function(response) {
 					if (_(response).isEmpty()) {
 						$formCont.addClass('sent-success');
-						if (ga) ga.push(['trackEvent', 'ContactForm', 'Submit', 'SendButton']);
+						_gaq.push(['_trackEvent', 'ContactForm', 'Submit', 'SendButton']);
 					}
 					else {
 						_(response).each(function (key) {
