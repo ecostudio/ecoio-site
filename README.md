@@ -1,29 +1,29 @@
-#Ecostud.io
+# Ecostud.io
 
-##Setup
+## Setup
 
 First of all, you will need Node.js, NPM and Grunt CLI installed.
 
 After cloning the repo, you need to pull in dependencies:
 
-    ```shell
-    composer install
-    npm install
-    bower install
-    ```
+```shell
+composer install
+npm install
+bower install
+```
 
 Then you should run the Grunt task that sets up the show:
 
-	```shell
-	grunt setup
-	```
+```shell
+grunt setup
+```
 
-##Build
+## Build
 
 To build, you can simply run:
 
-	```shell
-	grunt
-	```
+```shell
+grunt
+```
 
 The site will be ready to deploy in the `dist` directory.
