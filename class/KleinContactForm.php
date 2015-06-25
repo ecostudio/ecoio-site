@@ -5,15 +5,13 @@ class KleinContactForm {
 	public $data = [];
 	protected $validators = [];
 	protected $service;
-	protected $valid = false;
+	protected $valid = null;
 	public $errors = [];
 
 	function __construct ($service, $data = [], $validators = []) {
 		$this->data = $data;
 		$this->validators = $validators;
 		$this->service = $service;
-
-		$this->validate();
 	}
 
 	function validate() {
@@ -32,6 +30,7 @@ class KleinContactForm {
 	}
 
 	function isValid() {
+		if (is_null($this->valid)) $this->validate();
 		return $this->valid;
 	}
 
