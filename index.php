@@ -6,6 +6,19 @@
 
 const CONTACT_EMAIL = 'szm@ecostudio.hu';
 const UPLOAD_DIR = 'uploads/';
+const UPLOAD_ALLOWED_EXTENSIONS = [
+	'doc',
+	'docx',
+	'pdf',
+	'xml',
+	'jpg',
+	'jpeg',
+	'png',
+	'gif',
+	'txt',
+	'rtf'
+];
+const UPLOAD_MAX_FILESIZE = 25000000;
 
 //////////
 //SETUP //
@@ -145,13 +158,12 @@ $klein->respond('POST', '/fileupload', function ($req, $resp, $service, $app) {
 		$ext = pathinfo($origName, PATHINFO_EXTENSION);
 		$size = filesize($tmpName);
 		$newName = md5(uniqid()) . '.' . $ext;
-		$allowed = ['doc','docx','pdf','xml','jpg','png','gif','jpeg','txt','rtf'];
 
-		if ($size > 25000000) {
+		if ($size > UPLOAD_MAX_FILESIZE) {
 			throw Klein\Exceptions\HttpException::createFromCode(413);
 		}
 
-		if (!in_array($ext, $allowed)) {
+		if (!in_array($ext, UPLOAD_ALLOWED_EXTENSIONS)) {
 			throw Klein\Exceptions\HttpException::createFromCode(415);
 		}
 
