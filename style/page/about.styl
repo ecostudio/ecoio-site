@@ -22,9 +22,33 @@
 	}
 }
 
+@keyframes billeg {
+	0% {
+		transform rotateZ(-30deg)
+	}
+	100% {
+		transform rotateZ(30deg)
+	}
+}
+
 .team-member-media {
 	column(1/3)
 	image-container()
+	position relative
+
+	.media-replacement {
+		color ecogreen
+		font-size 7em
+		abs-center()
+
+		.threed-elem {
+			animation billeg 1s ease-out infinite alternate
+		}
+
+		& + img, & + video {
+			visibility hidden
+		}
+	}
 }
 
 .team-member-data {
