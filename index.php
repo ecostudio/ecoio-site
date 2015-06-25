@@ -19,8 +19,7 @@ $klein->app()->renderer = new MustacheTemplateRenderer(
 	'templates',
 	'templates/partials',
 	[
-		'page' => 'templates/partials/pages',
-		'hero' => 'templates/partials/heroes'
+		'page' => 'templates/partials/pages'
 	]
 );
 $routes = $klein->app()->routeData = json_decode(file_get_contents('routes.json'), true);
