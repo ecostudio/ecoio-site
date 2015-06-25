@@ -6,18 +6,7 @@
 
 const CONTACT_EMAIL = 'szm@ecostudio.hu';
 const UPLOAD_DIR = 'uploads/';
-const UPLOAD_ALLOWED_EXTENSIONS = [
-	'doc',
-	'docx',
-	'pdf',
-	'xml',
-	'jpg',
-	'jpeg',
-	'png',
-	'gif',
-	'txt',
-	'rtf'
-];
+const UPLOAD_ALLOWED_EXTENSIONS = 'doc docx pdf xml jpg jpeg png gif txt rtf';
 const UPLOAD_MAX_FILESIZE = 25000000;
 
 //////////
@@ -163,7 +152,7 @@ $klein->respond('POST', '/fileupload', function ($req, $resp, $service, $app) {
 			throw Klein\Exceptions\HttpException::createFromCode(413);
 		}
 
-		if (!in_array(strtolower($ext), UPLOAD_ALLOWED_EXTENSIONS)) {
+		if (!in_array(strtolower($ext), explode(' ', UPLOAD_ALLOWED_EXTENSIONS))) {
 			throw Klein\Exceptions\HttpException::createFromCode(415);
 		}
 
