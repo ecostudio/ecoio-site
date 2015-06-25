@@ -163,7 +163,7 @@ $klein->respond('POST', '/fileupload', function ($req, $resp, $service, $app) {
 			throw Klein\Exceptions\HttpException::createFromCode(413);
 		}
 
-		if (!in_array($ext, UPLOAD_ALLOWED_EXTENSIONS)) {
+		if (!in_array(strtolower($ext), UPLOAD_ALLOWED_EXTENSIONS)) {
 			throw Klein\Exceptions\HttpException::createFromCode(415);
 		}
 
