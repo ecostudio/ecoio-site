@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteRule uploads(/|$) index.php [L]
+
 RewriteRule js/[0-9]*/(.*) js/$1
 RewriteRule css/([^.]*)\.[0-9]*\.css css/$1.css
 
