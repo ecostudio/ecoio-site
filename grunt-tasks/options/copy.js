@@ -16,7 +16,8 @@ module.exports = {
 					'templates/**',
 					'index.php',
 					'favicon.ico',
-					'routes.json'
+					'routes.json',
+					'sitemap.xml'
 				],
 				dest: 'dist/'
 			},
