@@ -8,13 +8,13 @@ require(['jquery', 'contact', 'menuToggle', 'slick', 'placeholders'],
 	contact('.contact-form');
 
 	$(':header[id]').wrapInner(function () {
-		return $('<a>').attr('href', '#' + this.id);
+		return $('<a>').attr('href', window.location.pathname + '#' + this.id);
 	});
 
 	$('.team-member-icons i')
 		.attr('data-title', function () { return $(this).attr('title'); })
 		.removeAttr('title');
 
-	$('.full-image-list').slick();
+	var $sliders = $('.full-image-list').slick();
 
 });

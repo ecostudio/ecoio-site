@@ -186,10 +186,21 @@ a {
 
 .full-image {
 	width 100%
+	height auto
 	margin 1em 0
 }
 
 .full-image-list {
+
+	.full-image {
+		&:not(:first-child) {
+			position absolute
+		}
+
+		&.slick-slide {
+			position relative
+		}
+	}
 
 	&.slider {
 
