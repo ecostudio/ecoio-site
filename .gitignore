@@ -4,6 +4,7 @@ tmp
 .ftppass
 dist/**
 uploads/**
+/.sublime-grunt.cache
 
 #Composer
 /vendor
