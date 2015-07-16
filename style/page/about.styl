@@ -27,6 +27,18 @@
 				text-decoration underline
 			}
 		}
+
+		&:hover, &.show-secondary {
+
+			.primary-media {
+				opacity 0
+			}
+
+			.secondary-media {
+				opacity 1
+				margin-top 0.5em
+			}
+		}
 	}
 }
 
@@ -43,6 +55,7 @@
 	column(1/3)
 	image-container()
 	position relative
+	padding-top 1em
 
 	.media-replacement {
 		color ecogreen
@@ -56,6 +69,20 @@
 		& + img, & + video {
 			visibility hidden
 		}
+	}
+
+	.primary-media {
+		position relative
+		opacity 1
+		transition opacity 0.5s ease-out
+	}
+
+	.secondary-media {
+		abs-center()
+		margin-top 1em
+		opacity 0
+		transition opacity 0.5s ease-out, margin-top 0.3s ease-out
+		border 1px solid #eee
 	}
 }
 
