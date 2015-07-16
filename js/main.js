@@ -1,11 +1,13 @@
-require(['jquery', 'contact', 'menuToggle', 'slick', 'placeholders'],
-	function ($, contact, menuToggle, slick) {
+require(['jquery', 'contact', 'menuToggle', 'teamcycle', 'slick', 'placeholders'],
+	function ($, contact, menuToggle, teamcycle, slick) {
 
 	console.log('Welcome to EcoStudio!');
 
 	menuToggle('.menu-toggle', '.header-menu', 'open');
 
 	contact('.contact-form');
+
+	teamcycle('.team-list .team-member:not(:last-child)', 3000);
 
 	$(':header[id]').wrapInner(function () {
 		return $('<a>').attr('href', window.location.pathname + '#' + this.id);
