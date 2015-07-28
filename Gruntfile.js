@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		'clean:dist',
 		'stylus',
 		'requirejs',
-		'svg2png',
+		//'svg2png',
 		'concat:ie8',
 		'copy:dist',
 		'uglify',
