@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 				transition opacity 0.3s ease-out
 
 				.ie8 & {
-					margin-top -0.5em
+					display none
 				}
 			}
 
@@ -198,6 +198,11 @@ a {
 
 		&.large {
 			font-size 2em
+		}
+
+		.ie8 & {
+			background-color ecogreen_ie8
+			color white
 		}
 	}
 }

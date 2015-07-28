@@ -61,6 +61,11 @@
 		font-size 7em
 		abs-center()
 
+		.ie8 & {
+			color ecogreen_ie8
+			top 15%
+		}
+
 		.threed-elem {
 			animation billeg 1s ease-out infinite alternate
 		}
@@ -82,6 +87,10 @@
 		opacity 0
 		transition opacity 0.2s ease-out
 		border 1px solid #eee
+
+		.ie8 & {
+			display none
+		}
 	}
 }
 
