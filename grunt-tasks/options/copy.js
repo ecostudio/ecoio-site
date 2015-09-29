@@ -15,6 +15,7 @@ module.exports = {
 					'class/**',
 					'templates/**',
 					'index.php',
+					'data.php',
 					'favicon.ico',
 					'routes.json',
 					'sitemap.xml'

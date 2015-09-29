@@ -15,6 +15,7 @@ const UPLOAD_MAX_FILESIZE = 25000000;
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/class/loader.php';
+require_once __DIR__ . '/data.php';
 
 $klein = new \Klein\Klein();
 $klein->app()->renderer = new MustacheTemplateRenderer(
@@ -31,6 +32,7 @@ $klein->app()->moddates = [
 	'css' => filemtime('css/main.css'),
 	'js' => filemtime('js/main.js')
 ];
+$klein->app()->data = $data;
 $klein->app()->production = !!apache_getenv('PRODUCTION');
 
 /////////////////
@@ -44,7 +46,8 @@ $klein->respond('GET', '/', function($req, $resp, $service, $app) {
 	return $app->renderer->render('about', [
 		'routes' => $routeData,
 		'moddates' => $app->moddates,
-		'production' => $app->production
+		'production' => $app->production,
+		'data' => $app->data
 	]);
 });
 
@@ -63,7 +66,8 @@ foreach ($routes as $id => $data) {
 			'formsuccess' => $app->prg->getSuccess(),
 			'formdata' => count($errors) ? $app->prg->getData() : [],
 			'moddates' => $app->moddates,
-			'production' => $app->production
+			'production' => $app->production,
+			'data' => $app->data
 		];
 
 		$app->prg->reset();
