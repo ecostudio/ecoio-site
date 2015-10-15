@@ -16,7 +16,7 @@
 		}
 
 		.ie8 & {
-			margin-right 0
+			margin-right 1.5em
 		}
 
 		h3 {
@@ -112,19 +112,17 @@
 
 	.secondary-media {
 		position absolute
-		top 0.75em
-		left 0.75em
-		right 0.75em
+		top 0
+		left 0
+		right 0
+		bottom 0
 		z-index 1
 		overflow hidden
 		box-sizing border-box
-		padding-bottom 100%
-		padding-bottom calc(100% - 1em)
 
 		opacity 0
 		transition opacity 0.2s ease-out
-		border 1px solid #eee
-		border-radius 50%
+		border-bottom 1px solid #eee
 
 		img {
 			position absolute
@@ -160,15 +158,19 @@
 
 .team-member-arrival {
 	position absolute
-	top 5.75em
-	left 0.5em
-	font-size 1.4em
+	top 5.25em
+	left 0.6em
+	font-size 1.3em
 	background-color #f78a21
 	color white
 	padding 0.2em 0.5em
 	transform rotate(-25deg)
 	box-shadow 1px 1px 1px #444
 	transition transform 0.4s ease-out
+
+	.ie8 & {
+		background-color #888
+	}
 
 	+tablet() {
 		font-size 1.3em
@@ -187,6 +189,10 @@
 		cursor pointer
 		float none
 		display inline-block
+
+		.ie8 & {
+			margin-right 2px
+		}
 
 		i[data-title] {
 			position relative
@@ -233,7 +239,7 @@
 				}
 
 				.ie8 & {
-					color #ecogreen_ie8
+					color ecogreen_ie8
 				}
 			}
 
