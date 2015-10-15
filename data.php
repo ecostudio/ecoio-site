@@ -91,8 +91,8 @@ $data = [
 			'icons' => [
 				[ 'icon' => 'windows', 'title' => 'Windows' ],
 				[ 'icon' => 'android', 'title' => 'Android' ],
-				[ 'icon' => 'money', 'title' => 'Pénzügyek' ],
 				[ 'icon' => 'calculator', 'title' => 'Elemzés' ],
+				[ 'icon' => 'money', 'title' => 'Pénzügyek' ],
 				[ 'icon' => 'area-chart', 'title' => 'Statisztika' ],
 				[ 'icon' => 'music', 'title' => 'Grunge' ],
 				[ 'icon' => 'airplane', 'title' => 'Utazás' ],
@@ -196,15 +196,46 @@ $data = [
 				[ 'icon' => 'photoshop', 'title' => 'Photoshop' ],
 				[ 'icon' => 'paint-brush', 'title' => 'Festés' ],
 				[ 'icon' => 'pencil', 'title' => 'Rajzolás' ],
-				[ 'icon' => 'bicycle', 'title' => 'Bringa' ],
 				[ 'icon' => 'compass', 'title' => 'Túrázás' ],
 				[ 'icon' => 'history', 'title' => 'Történelem' ],
+				[ 'icon' => 'bicycle', 'title' => 'Bringa' ],
+			],
+		],
+		[
+			'id' => 'default',
+			'name' => '████',
+			'title' => 'UX',
+			'placeholder_days' => daysTillDate('2015/11/09'),
+			'icons' => [
+			],
+		],
+		[
+			'id' => 'default',
+			'name' => '████',
+			'title' => 'Sitebuild',
+			'placeholder_days' => daysTillDate('2015/11/05'),
+			'icons' => [
+			],
+		],
+		[
+			'id' => 'default',
+			'name' => '█████',
+			'title' => 'Backend',
+			'placeholder_days' => daysTillDate('2015/12/07'),
+			'icons' => [
 			],
 		],
 
 	]
 
 ];
+
+function daysTillDate($date) {
+	$cdate = strtotime($date);
+	$difference = $cdate - time();
+	if ($difference < 0) $difference = 0;
+	return floor($difference / 60 / 60 / 24);
+}
 
 ?>
 

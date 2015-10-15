@@ -1,18 +1,18 @@
 .team-list {
 	unstyled-list()
 	cf()
+	text-align center
 
 	.team-member {
-		column(1/2, cycle: 2)
+		column(1/5, cycle: 5)
 		margin-bottom 2em
 		border 1px solid #eee
 		box-sizing border-box
 
-		display table
-		table-layout fixed
-
 		+mobile() {
-			stack()
+			column(1/2, uncycle: 5, cycle: 2)
+			font-size 1.2em
+			margin-bottom 0.75em
 		}
 
 		.ie8 & {
@@ -20,8 +20,11 @@
 		}
 
 		h3 {
-			text-align left
+			text-align center
 			line-height 1.25
+			white-space nowrap
+			overflow hidden
+			text-overflow ellipsis
 		}
 
 		a {
@@ -42,6 +45,28 @@
 				opacity 1
 			}
 		}
+
+		&.placeholder {
+
+			&:hover, &.highlight {
+
+				.primary-media {
+					opacity 1
+				}
+
+				.team-member-arrival {
+					transform rotate(360deg)
+				}
+			}
+		}
+
+		&.your-place {
+
+			h3 {
+				font-size 1.5em
+				line-height 1.5
+			}
+		}
 	}
 }
 
@@ -56,15 +81,14 @@
 
 .team-member-media {
 	image-container()
-	display table-cell
 	position relative
-	width 33%
-	vertical-align middle
+	overflow hidden
 
 	.media-replacement {
+		position absolute
+		abs-center()
 		color ecogreen
 		font-size 7em
-		abs-center()
 
 		.ie8 & {
 			color ecogreen_ie8
@@ -84,14 +108,13 @@
 		position relative
 		opacity 1
 		transition opacity 0.2s ease-out
-
 	}
 
 	.secondary-media {
 		position absolute
-		top 1em
-		left 1em
-		right 0.5em
+		top 0.75em
+		left 0.75em
+		right 0.75em
 		z-index 1
 		overflow hidden
 		box-sizing border-box
@@ -117,9 +140,8 @@
 }
 
 .team-member-data {
-	display table-cell
-	width 67%
 	padding 1em
+	padding-top 0.5em
 
 	.ie8 & {
 		margin-right 0
@@ -128,22 +150,43 @@
 
 .team-member-field {
 	font-header-light()
-	font-size 1.5em
+	font-size 1.25em
+	margin-bottom 0.5em
 
 	+tablet() {
-		font-size 1.25em
+		font-size 1em
 	}
 }
 
+.team-member-arrival {
+	position absolute
+	top 5.75em
+	left 0.5em
+	font-size 1.4em
+	background-color #f78a21
+	color white
+	padding 0.2em 0.5em
+	transform rotate(-25deg)
+	box-shadow 1px 1px 1px #444
+	transition transform 0.4s ease-out
+
+	+tablet() {
+		font-size 1.3em
+	}
+}
 
 .team-member-icons {
 	unstyled-list()
-	font-size 1.75em
+	cf()
+	font-size 1.4em
+	height @font-size * 3
 
 	li {
-		display inline-block
-		margin-right 0.5em
+		column(1/5, cycle: 5)
+		text-align center
 		cursor pointer
+		float none
+		display inline-block
 
 		i[data-title] {
 			position relative

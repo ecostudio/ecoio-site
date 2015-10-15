@@ -16,16 +16,18 @@
 
 		<ul class="team-list">
 			{{# data.team }}
-			<li class="team-member">
-				<div class="team-member-media">
-					<video class="primary-media" autoplay loop poster="image/android/{{ id }}.jpg">
+			<li class="team-member{{# placeholder_days }} placeholder{{/ placeholder_days }}">
+				<div class="team-member-media"><!--
+					--><video class="primary-media" autoplay loop poster="image/android/{{ id }}.jpg">
 						<source src="image/android/{{ id }}.mp4" type='video/mp4; codecs="avc1.42E01F"'>
 						<source src="image/android/{{ id }}.webm" type='video/webm; codecs=vp8'>
 						<!--[if lt IE 9]><img src="image/android/{{ id }}.gif" alt="" /><![endif]-->
 					</video>
+					{{# id2}}
 					<div class="secondary-media">
 						<img src="image/portrait/{{ id2 }}.jpg" alt="{{ name }}" />
 					</div>
+					{{/ id2}}
 				</div>
 				<div class="team-member-data">
 					<h3>{{ name }}</h3>
@@ -35,10 +37,13 @@
 						<li><i tabindex="0" class="icon icon-{{ icon }}" title="{{ title }}"></i>
 						{{/ icons }}
 					</ul>
+					{{# placeholder_days }}
+					<p class="team-member-arrival">Még <span class="number">{{ placeholder_days }}</span> nap!</p>
+					{{/ placeholder_days }}
 				</div>
 			</li>
 			{{/ data.team }}
-			<li class="team-member">
+			<li class="team-member your-place">
 				<div class="team-member-media">
 					<div class="media-replacement threed-container">
 						<div class="threed-elem">?</div>
@@ -47,8 +52,8 @@
 				</div>
 				<div class="team-member-data">
 					<a href="/kit-keresunk">
-						<h3>Ez a Te helyed!</h3>
-						<div class="team-member-field">Csatlakozz hozzánk!</div>
+						<h3>A Te helyed!</h3>
+						<div class="team-member-field">Csatlakozz!</div>
 					</a>
 					<ul class="team-member-icons">
 						<li><i tabindex="0" class="icon icon-php" title="PHP senior backend fejlesztő"></i>
