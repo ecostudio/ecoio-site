@@ -225,6 +225,14 @@ $data = [
 			'icons' => [
 			],
 		],
+		[
+			'id' => 'default',
+			'name' => '████',
+			'title' => 'Backend',
+			'placeholder_days' => daysTillDate('2015/11/02'),
+			'icons' => [
+			],
+		],
 
 	]
 
