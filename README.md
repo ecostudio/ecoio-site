@@ -74,7 +74,7 @@ There is an icon font (`fonts/icomoon.*`) that was generated with [Icomoon](http
 
 Images are stored in the `image` directory.
 
-Android avatars, generated on https://androidify.com in animated GIF format, must be converted into MP4, WebM and JPG formats. Simply place the animated GIFs into `image/android` and run `animgif_convert.sh`.
+Android avatars, generated on https://androidify.com in animated GIF format, must be converted into MP4, WebM and JPG formats. Simply place the animated GIFs into `image/android` and run `animgif_convert.sh`. You need **ffmpeg** installed for this to work.
 
 ### Javascript
 
