@@ -7,7 +7,7 @@ require(['jquery', 'contact', 'menuToggle', 'teamcycle', 'slick', 'placeholders'
 
 	contact('.contact-form');
 
-	teamcycle('.team-list .team-member:not(.your-place):not(.placeholder)', 3000);
+	teamcycle('.team-list .team-member:not(.your-place):not(.placeholder):not(.no-real-img)', 3000);
 
 	$(':header[id]').wrapInner(function () {
 		return $('<a>').attr('href', window.location.pathname + '#' + this.id);

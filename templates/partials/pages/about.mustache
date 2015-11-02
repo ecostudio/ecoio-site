@@ -16,7 +16,7 @@
 
 		<ul class="team-list">
 			{{# data.team }}
-			<li class="team-member{{# placeholder }} placeholder{{/ placeholder }}">
+			<li class="team-member{{# placeholder }} placeholder{{/ placeholder }}{{^ id2 }} no-real-img{{/ id2 }}">
 				<div class="team-member-media"><!--
 					--><video class="primary-media" autoplay loop poster="image/android/{{ id }}.jpg">
 						<source src="image/android/{{ id }}.mp4" type='video/mp4; codecs="avc1.42E01F"'>
