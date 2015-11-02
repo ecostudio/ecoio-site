@@ -42,6 +42,15 @@ $data = [
 			],
 		],
 		[
+			'id' => 'default',
+			'name' => 'Ákos',
+			'title' => 'Backend',
+			'placeholder_days' => 0,
+			'placeholder' => true,
+			'icons' => [
+			],
+		],
+		[
 			'id' => 'bence',
 			'id2' => 'bence',
 			'name' => 'Bence',
@@ -206,6 +215,7 @@ $data = [
 			'name' => '████',
 			'title' => 'UX',
 			'placeholder_days' => daysTillDate('2015/11/09'),
+			'placeholder' => true,
 			'icons' => [
 			],
 		],
@@ -214,6 +224,7 @@ $data = [
 			'name' => '████',
 			'title' => 'Sitebuild',
 			'placeholder_days' => daysTillDate('2015/11/05'),
+			'placeholder' => true,
 			'icons' => [
 			],
 		],
@@ -222,18 +233,10 @@ $data = [
 			'name' => '█████',
 			'title' => 'Backend',
 			'placeholder_days' => daysTillDate('2015/12/07'),
+			'placeholder' => true,
 			'icons' => [
 			],
 		],
-		[
-			'id' => 'default',
-			'name' => '████',
-			'title' => 'Backend',
-			'placeholder_days' => daysTillDate('2015/11/02'),
-			'icons' => [
-			],
-		],
-
 	]
 
 ];
