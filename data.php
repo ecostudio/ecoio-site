@@ -222,9 +222,8 @@ $data = [
 		],
 		[
 			'id' => 'stefanie',
-			'id2' => 'stefania',
 			'name' => 'Stefánia',
-			'title' => 'sitebuild',
+			'title' => 'Sitebuild',
 			'icons' => [
 				[ 'icon' => 'windows', 'title' => 'Windows' ],
 				[ 'icon' => 'android', 'title' => 'Android' ],
