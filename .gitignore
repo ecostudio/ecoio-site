@@ -15,6 +15,7 @@ composer.lock
 #Bower and NPM files
 bower_components/*
 node_modules/*
+node_modules
 
 #Plato JS code reports
 public/jsreports/*
