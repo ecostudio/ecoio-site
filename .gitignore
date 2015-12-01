@@ -5,6 +5,7 @@ tmp
 dist/**
 uploads/**
 /.sublime-grunt.cache
+npm-debug.log
 
 #Composer
 /vendor
