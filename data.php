@@ -260,15 +260,6 @@ $data = [
 				[ 'icon' => 'paw', 'title' => 'Cicák' ],
 			],
 		],
-		[
-			'id' => 'default',
-			'name' => '█████',
-			'title' => 'Backend',
-			'placeholder_days' => daysTillDate('2015/12/07'),
-			'placeholder' => true,
-			'icons' => [
-			],
-		],
 	]
 
 ];
