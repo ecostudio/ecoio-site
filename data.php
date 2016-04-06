@@ -239,7 +239,7 @@ $data = [
 				[ 'icon' => 'history', 'title' => 'Történelem' ],
 				[ 'icon' => 'bicycle', 'title' => 'Bringa' ],
 			],
-		],
+		]/*,
 		[
 			'id' => 'stefanie',
 			'name' => 'Stefánia',
@@ -259,7 +259,7 @@ $data = [
 				[ 'icon' => 'gamepad', 'title' => 'League of Legends' ],
 				[ 'icon' => 'paw', 'title' => 'Cicák' ],
 			],
-		],
+		],*/
 	]
 
 ];
